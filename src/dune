@@ -1,0 +1,20 @@
+(alias
+ (name default)
+ (deps index.html dune main.ml))
+
+(executable
+ (name main)
+ (modes js)
+ (preprocess
+  (pps js_of_ocaml-ppx)))
+
+(env
+ (dev
+  (js_of_ocaml
+   (flags
+    ((:standard
+      --debug-info
+      --no-inline
+      --source-map
+      (--disable staticeval)
+      (--disable share)))))))

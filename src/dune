@@ -1,9 +1,18 @@
+(include_subdirs unqualified)
+
 (alias
  (name default)
  (deps index.html dune main.ml))
 
+(library
+ (name lib)
+ (modules
+  (:standard \ Main)))
+
 (executable
  (name main)
+ (libraries lib)
+ (modules Main)
  (modes js)
  (preprocess
   (pps js_of_ocaml-ppx)))

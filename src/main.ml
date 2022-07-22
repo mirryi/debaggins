@@ -1,1 +1,1 @@
-let () = print_endline "aaa"
+let () = Lib.run ()

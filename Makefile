@@ -6,7 +6,7 @@ default: dev
 .PHONY: dev
 dev:
 	dune build @src/fmt --auto-promote || true
-	dune build src --profile dev
+	dune build --profile dev
 
 .PHONY: watch
 watch:
